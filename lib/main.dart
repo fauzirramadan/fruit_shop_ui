@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_shop_ui/item.dart';
+import 'package:food_shop_ui/item_description.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -140,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                   duration: const Duration(milliseconds: 250),
                   child: Icon(
                     value.visible ? Icons.clear : Icons.notes_rounded,
-                    size: 45,
+                    size: 40,
                     color: Colors.black,
                     key: ValueKey<bool>(value.visible),
                   ),
@@ -167,7 +168,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Fruit and Berries",
+                "Fruit and berries",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
@@ -197,8 +198,9 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 5,
                   physics: const BouncingScrollPhysics(),
                   crossAxisCount: 2,
-                  children:
-                      gridItem().map((item) => getGridItem(item)).toList(),
+                  children: gridItem()
+                      .map((item) => getGridItem(item, context))
+                      .toList(),
                 ),
               )
             ],
@@ -209,9 +211,16 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget getGridItem(Item item) {
+Widget getGridItem(Item item, BuildContext context) {
   return GestureDetector(
-    onTap: () {},
+    onTap: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => ItemDetail(
+                    item: item,
+                  )));
+    },
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       color: item.color,
@@ -227,13 +236,15 @@ Widget getGridItem(Item item) {
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             Text(
-              item.price + item.priceDeccription,
+              item.price.toString() + item.priceDeccription,
               style: TextStyle(color: Colors.grey[700]),
             ),
             const SizedBox(
               height: 8,
             ),
-            Expanded(child: Image.asset(item.imageAsset)),
+            Expanded(
+                child: Hero(
+                    tag: item.imageAsset, child: Image.asset(item.imageAsset))),
             InkWell(
               onTap: () {},
               child: Container(
