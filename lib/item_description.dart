@@ -222,7 +222,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
                             height: 65,
-                            minWidth: 250,
+                            minWidth: 210,
                             color: widget.item.color,
                             onPressed: () {},
                             child: const Text(
