@@ -166,7 +166,7 @@ class _ItemDetailState extends State<ItemDetail> {
                         ),
                         Text(
                           // mengambil 2 angka saja
-                          "\$ ${total.toStringAsFixed(2)}",
+                          "\$${total.toStringAsFixed(2)}",
                           style: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
                         )
