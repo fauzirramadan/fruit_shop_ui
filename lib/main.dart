@@ -257,11 +257,11 @@ Widget getGridItem(Item item, BuildContext context) {
                   children: const [
                     Text(
                       "Add to cart",
-                      style: TextStyle(fontSize: 13),
+                      style: TextStyle(fontSize: 16),
                     ),
                     Icon(
                       Icons.shopping_cart,
-                      size: 15,
+                      size: 16,
                     )
                   ],
                 ),
