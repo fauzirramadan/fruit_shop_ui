@@ -70,13 +70,12 @@ class _ItemDetailState extends State<ItemDetail> {
                         Navigator.pop(context);
                       },
                       child: Container(
-                        height: 45,
-                        width: 45,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(15)),
-                        child: const Icon(Icons.arrow_left_rounded),
-                      ),
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Icon(Icons.keyboard_arrow_left_rounded)),
                     ),
                   ],
                 ),

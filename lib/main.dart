@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                 return AnimatedSwitcher(
                   duration: const Duration(milliseconds: 250),
                   child: Icon(
-                    value.visible ? Icons.clear : Icons.notes_rounded,
+                    value.visible ? Icons.clear : Icons.widgets_outlined,
                     size: 40,
                     color: Colors.black,
                     key: ValueKey<bool>(value.visible),
