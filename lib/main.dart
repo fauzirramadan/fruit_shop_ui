@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:food_shop_ui/item.dart';
 import 'package:food_shop_ui/item_description.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                     'Fruity',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                        fontSize: 26,
                         color: Colors.white70),
                   ),
                 ),
@@ -163,7 +164,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: Container(
-          margin: const EdgeInsets.all(15),
+          margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
