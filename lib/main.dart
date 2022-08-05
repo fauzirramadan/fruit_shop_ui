@@ -150,15 +150,13 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                "Fruity",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.red[400]),
+              padding: EdgeInsets.all(10),
+              child: Icon(
+                Icons.notifications_rounded,
+                color: Colors.grey,
+                size: 30,
               ),
             ),
           ],
