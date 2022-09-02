@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:food_shop_ui/item.dart';
 import 'package:food_shop_ui/item_description.dart';
+import 'package:food_shop_ui/onboarding.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const HomePage(),
+      home: const OnboardingScreen(),
     );
   }
 }
