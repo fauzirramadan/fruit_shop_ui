@@ -9,8 +9,11 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+  bool isLoading = false;
+
   Future splashLoading() async {
     Future.delayed(const Duration(seconds: 5), () {
+      isLoading = true;
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (_) => const HomePage()),
@@ -40,7 +43,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const Text(
                 "Buy Fresh Fruit",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              !isLoading
+                  ? const CircularProgressIndicator(
+                      color: Colors.grey,
+                    )
+                  : const SizedBox()
             ],
           ),
         ),
