@@ -12,7 +12,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   bool isLoading = false;
 
   Future splashLoading() async {
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 3), () {
       isLoading = true;
       Navigator.pushAndRemoveUntil(
           context,
@@ -36,13 +36,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/fruit.jpg"),
+              Image.asset("assets/images/fruit_splash.png"),
               const SizedBox(
                 height: 16,
               ),
               const Text(
-                "Buy Fresh Fruit",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                "Find fresh and healthy fruit",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 20,

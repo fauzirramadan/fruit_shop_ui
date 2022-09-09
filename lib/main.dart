@@ -132,8 +132,8 @@ class _HomePageState extends State<HomePage> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0.1,
-          backgroundColor: Colors.white,
+          elevation: 0.0,
+          backgroundColor: Colors.white.withOpacity(0.1),
           leading: IconButton(
             onPressed: _handleMenuButtonPressed,
             icon: ValueListenableBuilder<AdvancedDrawerValue>(
@@ -182,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black,
                   ),
                   filled: true,
-                  fillColor: Colors.grey.withOpacity(0.2),
+                  fillColor: Colors.grey.withOpacity(0.1),
                   border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide.none),
