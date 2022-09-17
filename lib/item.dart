@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:food_shop_ui/constant.dart';
 
 class Item {
   String title;
@@ -18,7 +19,7 @@ List<Item> gridItem() {
   return <Item>[
     Item(
         "Banana",
-        const Color(0xFFF4E389),
+        bananaColor,
         1.25,
         " per/kg",
         "assets/images/bananas.png",
@@ -26,7 +27,7 @@ List<Item> gridItem() {
         "Stone Fruit"),
     Item(
         "Blueberry",
-        const Color(0xFFDFDFF8),
+        blueberryColor,
         2.50,
         " each",
         "assets/images/blueberry.png",
@@ -34,7 +35,7 @@ List<Item> gridItem() {
         "Tropical"),
     Item(
         "Dragon Fruit",
-        const Color(0xFFEAB9E7),
+        dragonColor,
         5.5,
         " per/kg",
         "assets/images/dragon_fruit.png",
@@ -42,7 +43,7 @@ List<Item> gridItem() {
         "Exotic"),
     Item(
         "Lychee",
-        const Color(0xFFB4E0AA),
+        lycheeColor,
         10.2,
         " per/kg",
         "assets/images/lychee.png",
@@ -50,7 +51,7 @@ List<Item> gridItem() {
         "Berries"),
     Item(
         "Mango",
-        const Color(0xFFF8DA8A),
+        mangoColor,
         7.2,
         " each",
         "assets/images/mango.png",
@@ -58,7 +59,7 @@ List<Item> gridItem() {
         "Melons"),
     Item(
         "Papaya",
-        const Color(0xFFFFB570),
+        papayaColor,
         2.35,
         " each",
         "assets/images/papaya.png",
@@ -66,7 +67,7 @@ List<Item> gridItem() {
         "Apples"),
     Item(
         "Pineapple",
-        const Color(0xFFFCF8D5),
+        pineappleColor,
         5.75,
         " per/kg",
         "assets/images/pineapple.png",
@@ -74,7 +75,7 @@ List<Item> gridItem() {
         "Pears"),
     Item(
         "Strawberry",
-        const Color(0xFFFCE0E2),
+        strawberryColor,
         8.20,
         " per/kg",
         "assets/images/strawberry.png",
