@@ -1,8 +1,4 @@
-import 'dart:isolate';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_shop_ui/item.dart';
 
 class ItemDetail extends StatefulWidget {
@@ -45,7 +41,6 @@ class _ItemDetailState extends State<ItemDetail> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     addItem();
   }
@@ -62,22 +57,17 @@ class _ItemDetailState extends State<ItemDetail> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                          height: 45,
-                          width: 45,
-                          decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(15)),
-                          child: const Icon(Icons.keyboard_arrow_left_rounded)),
-                    ),
-                  ],
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Icon(Icons.keyboard_arrow_left_rounded)),
                 ),
               ),
               const SizedBox(
@@ -122,46 +112,44 @@ class _ItemDetailState extends State<ItemDetail> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              GestureDetector(
-                                onTap: removeItem,
-                                child: Container(
-                                  width: 48,
-                                  height: 48,
-                                  decoration: BoxDecoration(
-                                      color: Colors.grey.withOpacity(0.2),
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(15),
-                                          bottomLeft: Radius.circular(15))),
-                                  child: const Icon(Icons.remove),
-                                ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            GestureDetector(
+                              onTap: removeItem,
+                              child: Container(
+                                width: 48,
+                                height: 48,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(15),
+                                        bottomLeft: Radius.circular(15))),
+                                child: const Icon(Icons.remove),
                               ),
-                              Container(
-                                  width: 48,
-                                  height: 48,
-                                  decoration: BoxDecoration(
-                                      color: Colors.grey.withOpacity(0.3)),
-                                  child: Center(
-                                    child: Text(jumlahItem.toString()),
-                                  )),
-                              GestureDetector(
-                                onTap: addItem,
-                                child: Container(
-                                  width: 48,
-                                  height: 48,
-                                  decoration: BoxDecoration(
-                                      color: Colors.grey.withOpacity(0.2),
-                                      borderRadius: const BorderRadius.only(
-                                          topRight: Radius.circular(15),
-                                          bottomRight: Radius.circular(15))),
-                                  child: const Icon(Icons.add),
-                                ),
+                            ),
+                            Container(
+                                width: 48,
+                                height: 48,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.3)),
+                                child: Center(
+                                  child: Text(jumlahItem.toString()),
+                                )),
+                            GestureDetector(
+                              onTap: addItem,
+                              child: Container(
+                                width: 48,
+                                height: 48,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    borderRadius: const BorderRadius.only(
+                                        topRight: Radius.circular(15),
+                                        bottomRight: Radius.circular(15))),
+                                child: const Icon(Icons.add),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                         Text(
                           // mengambil 2 angka saja
@@ -182,13 +170,14 @@ class _ItemDetailState extends State<ItemDetail> {
                     const SizedBox(
                       height: 5,
                     ),
+                    // ignore: sized_box_for_whitespace
                     Container(
                       height: 150,
                       // agar text bisa di scroll
                       child: SingleChildScrollView(
                         child: Text(
                           widget.item.itemDescription,
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                           textAlign: TextAlign.justify,
                         ),
                       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:food_shop_ui/item.dart';
 import 'package:food_shop_ui/item_description.dart';
 import 'package:food_shop_ui/onboarding.dart';
